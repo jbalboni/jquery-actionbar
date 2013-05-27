@@ -1,0 +1,73 @@
+.actionbar {
+  border-bottom: 2px solid #bbb;
+  background-color: #eee;
+  height: 40px;
+  width: 100%;
+  min-width: 200px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.actionbar .home-icon {
+  width: 30px;
+  padding-top: 5px;
+}
+.actionbar menu {
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 5px;
+  margin-right: 30px;
+}
+.actionbar menu li {
+  display: inline-block;
+  padding-right: 10px;
+  vertical-align: top;
+  cursor: pointer;
+  height: 30px;
+}
+.actionbar menu li a {
+  display: inline-block;
+  height: 30px;
+}
+.actionbar menu li:active {
+  background-color: #aaf;
+}
+.actionbar menu li img {
+  width: 30px;
+  display: inline-block;
+}
+.actionbar .title {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 10px;
+  margin-left: 5px;
+}
+.actionbar menu.overflow {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 40px;
+  background-color: #eee;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 1px 3px #999;
+}
+.actionbar menu.overflow li {
+  display: block;
+  padding: 7px;
+  margin: 0px;
+  margin-right: 5px;
+}
+.actionbar .overflow-button {
+  position: absolute;
+  right: 0px;
+  padding: 5px 5px 0px 10px;
+  cursor: pointer;
+  width: 30px;
+}
+.actionbar nav {
+  float: right;
+  width: 50%;
+}
