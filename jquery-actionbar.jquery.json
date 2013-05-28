@@ -1,0 +1,27 @@
+{
+  "name": "jquery-actionbar",
+  "title": "jQuery Actionbar",
+  "description": "An Android-style action bar",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jbalboni/jquery-actionbar",
+  "author": {
+    "name": "Jeff Balboni",
+    "email": "jbalboni@gmail.com",
+    "url": "http://balbonidev.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbalboni/jquery-actionbar.git"
+  },
+  "bugs": "https://github.com/jbalboni/jquery-actionbar/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jbalboni/jquery-actionbar/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}

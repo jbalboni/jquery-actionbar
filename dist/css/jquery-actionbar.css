@@ -74,7 +74,7 @@
   right: 0px;
 }
 .actionbar .overflow-button img {
-  padding: 5px 5px 0px 10px;
+  padding: 5px 5px 0px 5px;
   width: 30px;
 }
 .actionbar .overflow-button:active {
