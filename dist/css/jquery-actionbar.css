@@ -22,23 +22,29 @@
 .actionbar menu li {
   display: inline-block;
   padding-right: 10px;
-  vertical-align: top;
   cursor: pointer;
   height: 40px;
+  text-transform: uppercase;
 }
 .actionbar menu li a {
-  display: inline-block;
   height: 30px;
   text-decoration: none;
   color: #000000;
   padding-top: 5px;
+  display: inline-block;
+}
+.actionbar menu li a .menu-label {
+  font-size: 90%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 7px;
+}
+.actionbar menu li a img {
+  width: 30px;
+  display: inline-block;
 }
 .actionbar menu li:active {
   background-color: #27b9ff;
-}
-.actionbar menu li img {
-  width: 30px;
-  display: inline-block;
 }
 .actionbar menu.overflow {
   display: none;
@@ -55,11 +61,20 @@
   display: block;
   padding: 7px;
   margin: 0px;
-  margin-right: 5px;
+  padding-right: 5px;
   height: auto;
+  text-transform: none;
+  border-bottom: 1px solid #dddddd;
+}
+.actionbar menu.overflow li:last-child {
+  border-bottom: none;
 }
 .actionbar menu.overflow li a {
   height: auto;
+}
+.actionbar menu.overflow li a .menu-label {
+  font-size: 100%;
+  padding-top: 0px;
 }
 .actionbar .title {
   display: inline-block;
