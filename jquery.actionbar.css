@@ -34,7 +34,7 @@
   padding-top: 5px;
 }
 .actionbar menu li:active {
-  background-color: #aaaaff;
+  background-color: #27b9ff;
 }
 .actionbar menu li img {
   width: 30px;
@@ -78,13 +78,13 @@
   width: 30px;
 }
 .actionbar .overflow-button:active {
-  background-color: #aaaaff;
+  background-color: #27b9ff;
 }
 .actionbar .home-button {
   display: inline-block;
 }
 .actionbar .home-button:active {
-  background-color: #aaaaff;
+  background-color: #27b9ff;
 }
 .actionbar nav {
   float: right;
