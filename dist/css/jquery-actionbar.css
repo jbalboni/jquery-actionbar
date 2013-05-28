@@ -105,3 +105,16 @@
   float: right;
   width: 50%;
 }
+.actionbar input[type=search] {
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  display: none;
+  padding-top: 7px;
+  border: none;
+  border-bottom: 2px solid #bbbbbb;
+  outline: none;
+  -webkit-appearance: none;
+  background: #eeeeee;
+  font-size: 100%;
+}

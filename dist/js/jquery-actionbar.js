@@ -11,6 +11,17 @@
           return $ab.width() - $ab.find('.up-button').width() - $ab.find('.title').width() -
             $ab.find('.home-icon').width() - 70;
         },
+        setView = function($item, view) {
+          if (view.type === "search") {
+            var $search = $("<input type='search' class='search-view'/>");
+            $search.attr("placeholder", view.placeholder);
+            $item.bind("click", function() {
+              $search.show();
+            });
+            $ab.append($search);
+            $item.addClass("search-view-button");
+          }
+        },
         buildMenu = function (menuItems) {
           var width = 0,
             $item = null,
@@ -33,6 +44,9 @@
 
           for (var i = 0; i < menuItems.length; i++) {
             $item = createMenuEl(menuItems[i].icon, menuItems[i].label, menuItems[i].show_icon_only);
+            if (menuItems[i].view) {
+              setView($item, menuItems[i].view);
+            }
             $menu.append($item);
             width = $item.width();
             if (overflow === true || menuWidth + width > maxWidth) {
@@ -60,7 +74,7 @@
       $(document).on("click", function (evnt) {
         var $target = $(evnt.target);
         if (!$target.hasClass("overflow-button") && !$target.parent().hasClass("overflow-button")) {
-          $(".actionbar menu.overflow").hide();
+          $ab.find("menu.overflow").hide();
         }
       });
       //TODO: does this work ok in all browsers?
@@ -98,11 +112,15 @@
       this.setTitle = function (title) {
         $abElem.find(".title").html(title);
       };
+      this.hideTitle = function() {
+        $abElem.find(".title").hide();
+      };
     }
 
     //defaults
     config = $.extend({
       show_home_icon: false,
+      show_title: true,
       overflow_icon: 'images/ic_action_overflow.png',
       title: 'jQuery Actionbar'
     }, config);
@@ -114,6 +132,9 @@
       }
       if (config.show_home_icon) {
         ab.addHomeButton(config.home_icon);
+      }
+      if (config.show_title === false) {
+        ab.hideTitle();
       }
       if (config.menu) {
         ab.createMenu(config.menu);
