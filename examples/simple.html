@@ -6,7 +6,16 @@
   <script src="../jquery.actionbar.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $("#actionbar").actionbar({home_icon: 'images/ic_launcher.png', overflow_icon: '../images/ic_action_overflow.png', title: 'Leave Tracker', menu: [{text: 'List', icon: 'images/ic_menu_list.png', icon_only: false}, {text: 'Settings', icon: 'images/ic_menu_settings.png', icon_only: false}, {text: 'Edit Category', icon: 'images/ic_menu_add.png'}]});
+      $("#actionbar").actionbar(
+              {home_icon: 'images/ic_launcher.png',
+               overflow_icon: '../images/ic_action_overflow.png',
+               title: 'Leave Tracker',
+               menu: [
+                   {text: 'List', icon: 'images/ic_menu_list.png', icon_only: false},
+                   {text: 'Settings', icon: 'images/ic_menu_settings.png', icon_only: false},
+                   {text: 'Edit Category', icon: 'images/ic_menu_add.png'}
+               ]
+              });
     });
   </script>
 </head>

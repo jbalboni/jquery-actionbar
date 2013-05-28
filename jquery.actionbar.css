@@ -1,6 +1,7 @@
 .actionbar {
-  border-bottom: 2px solid #bbb;
-  background-color: #eee;
+  font-family: sans-serif;
+  border-bottom: 2px solid #bbbbbb;
+  background-color: #eeeeee;
   height: 40px;
   width: 100%;
   min-width: 200px;
@@ -16,42 +17,38 @@
   float: right;
   margin: 0px;
   padding: 0px;
-  padding-top: 5px;
-  margin-right: 30px;
+  margin-right: 40px;
 }
 .actionbar menu li {
   display: inline-block;
   padding-right: 10px;
   vertical-align: top;
   cursor: pointer;
-  height: 30px;
+  height: 40px;
 }
 .actionbar menu li a {
   display: inline-block;
   height: 30px;
+  text-decoration: none;
+  color: #000000;
+  padding-top: 5px;
 }
 .actionbar menu li:active {
-  background-color: #aaf;
+  background-color: #aaaaff;
 }
 .actionbar menu li img {
   width: 30px;
   display: inline-block;
-}
-.actionbar .title {
-  display: inline-block;
-  vertical-align: top;
-  padding-top: 10px;
-  margin-left: 5px;
 }
 .actionbar menu.overflow {
   display: none;
   position: absolute;
   right: 5px;
   top: 40px;
-  background-color: #eee;
+  background-color: #eeeeee;
   padding: 0px;
   margin: 0px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   box-shadow: 0px 1px 3px #999;
 }
 .actionbar menu.overflow li {
@@ -59,13 +56,35 @@
   padding: 7px;
   margin: 0px;
   margin-right: 5px;
+  height: auto;
+}
+.actionbar menu.overflow li a {
+  height: auto;
+}
+.actionbar .title {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 10px;
+  margin-left: 5px;
 }
 .actionbar .overflow-button {
+  display: inline-block;
+  height: 40px;
   position: absolute;
   right: 0px;
+}
+.actionbar .overflow-button img {
   padding: 5px 5px 0px 10px;
-  cursor: pointer;
   width: 30px;
+}
+.actionbar .overflow-button:active {
+  background-color: #aaaaff;
+}
+.actionbar .home-button {
+  display: inline-block;
+}
+.actionbar .home-button:active {
+  background-color: #aaaaff;
 }
 .actionbar nav {
   float: right;
