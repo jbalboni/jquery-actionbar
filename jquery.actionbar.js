@@ -26,6 +26,7 @@
                         };
 
                     $menu.html("");
+                    $overflowMenu.html("");
 
                     for (var i = 0; i < menuItems.length; i++) {
                         $item = createMenuEl(menuItems[i].icon, menuItems[i].label, menuItems[i].show_icon_only);
@@ -39,24 +40,30 @@
                             menuWidth += width;
                         }
                     }
+                    if (overflow === false) {
+                        $ab.find(".overflow-button").hide();
+                    } else {
+                        $ab.find(".overflow-button").show();
+                    }
                 };
 
             //setup
             buildMenu(menuItems);
-            if ($overflowMenu.find("li").size() === 0) {
-                $(".actionbar .overflow-button").hide();
-            }
+
+            //events
             $(".overflow-button").on("click", function() {
                 $(".actionbar menu.overflow").toggle();
             });
-
-            //events
             $(document).on("click", function(evnt) {
                 var $target = $(evnt.target);
                 if (!$target.hasClass("overflow-button") &&
                     !$target.parent().hasClass("overflow-button")) {
                     $(".actionbar menu.overflow").hide();
                 }
+            });
+            //TODO: does this work ok in all browsers?
+            $(window).on("resize", function() {
+                buildMenu(menuItems);
             });
 
             //class methods
