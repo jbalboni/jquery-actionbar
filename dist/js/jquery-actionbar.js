@@ -1,4 +1,4 @@
-/*! jQuery Actionbar - v0.1.0 - 2013-05-28
+/*! jQuery Actionbar - v0.1.0 - 2013-05-30
 * https://github.com/jbalboni/jquery-actionbar
 * Copyright (c) 2013 Jeff Balboni; Licensed MIT */
 (function ($) {
@@ -12,15 +12,12 @@
             $ab.find('.home-icon').width() - 70;
         },
         setView = function($item, view) {
-          if (view.type === "search") {
-            var $search = $("<input type='search' class='search-view'/>");
-            $search.attr("placeholder", view.placeholder);
-            $item.bind("click", function() {
-              $search.show();
-            });
-            $ab.append($search);
-            $item.addClass("search-view-button");
-          }
+          var $view = $(view.html);
+          $item.bind("click", function() {
+            $view.show();
+          });
+          $ab.append($view);
+          $item.addClass("view-element");
         },
         buildMenu = function (menuItems) {
           var width = 0,
@@ -106,8 +103,8 @@
           icon + "\"/></a>");
       };
       this.addUpButton = function (icon) {
-        $abElem.prepend("<a href='javascript:void(0);' class='up-button'><img class=\"up-icon\" src=\"" +
-          icon + "\"/></a>");
+        $abElem.find(".home-button").prepend("<img class=\"up-icon\" src=\"" +
+          icon + "\"/>");
       };
       this.setTitle = function (title) {
         $abElem.find(".title").html(title);
@@ -127,11 +124,11 @@
     return this.each(function () {
       var ab = new ActionBar(this, config.title, config.overflow_icon);
 
-      if (config.show_up_icon) {
-        ab.addUpButton(config.up_icon);
-      }
       if (config.show_home_icon) {
         ab.addHomeButton(config.home_icon);
+      }
+      if (config.show_up_icon) {
+        ab.addUpButton(config.up_icon);
       }
       if (config.show_title === false) {
         ab.hideTitle();
