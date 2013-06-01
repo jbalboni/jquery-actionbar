@@ -1,16 +1,21 @@
-/*! jQuery Actionbar - v0.1.0 - 2013-05-30
+/*! jQuery Actionbar - v0.1.0 - 2013-05-31
 * https://github.com/jbalboni/jquery-actionbar
 * Copyright (c) 2013 Jeff Balboni; Licensed MIT */
 (function ($) {
   'use strict';
   $.fn.actionbar = function (config) {
+    //Action bar menu class
     function Menu($ab, menuItems) {
       var $menu = $ab.append("<menu/>").find("menu"),
         $overflowMenu = $ab.append("<menu class='overflow'/>").find("menu.overflow"),
+        //get the space available for the menu
         getSpace = function () {
+          //TODO: the - 70 is kind of a hack
           return $ab.width() - $ab.find('.up-button').width() - $ab.find('.title').width() -
             $ab.find('.home-icon').width() - 70;
         },
+        //set custom html as the Action View
+        //TODO: implementation could be more fleshed out
         setView = function($item, view) {
           var $view = $(view.html);
           $item.bind("click", function() {
@@ -19,6 +24,8 @@
           $ab.append($view);
           $item.addClass("view-element");
         },
+        //build the menu html from the list of items
+        //called on init and resize
         buildMenu = function (menuItems) {
           var width = 0,
             $item = null,
@@ -83,7 +90,8 @@
       this.buildMenu = buildMenu;
     }
 
-    function ActionBar(ab, title, overflow_icon) {
+    //ActionBar class. Contains main functionality of plugin
+    function ActionBar(ab, title) {
       //variable creation
       var $abElem = $(ab);
       this.menu = null;
@@ -91,8 +99,7 @@
       //set up
       $abElem.addClass('actionbar');
       $abElem.append("<span class=\"title\">" + title + "</span>");
-      $abElem.append("<a href='javascript:void(0);' class='overflow-button'><img src=\"" + overflow_icon +
-        "\"/></a>");
+      $abElem.append("<a href='javascript:void(0);' class='overflow-button'><img/></a>");
 
       //class methods
       this.createMenu = function (items) {
@@ -118,11 +125,11 @@
     config = $.extend({
       show_home_icon: false,
       show_title: true,
-      overflow_icon: 'images/ic_action_overflow.png',
       title: 'jQuery Actionbar'
     }, config);
+    //TODO: remove each? Can't have more than one bar
     return this.each(function () {
-      var ab = new ActionBar(this, config.title, config.overflow_icon);
+      var ab = new ActionBar(this, config.title);
 
       if (config.show_home_icon) {
         ab.addHomeButton(config.home_icon);

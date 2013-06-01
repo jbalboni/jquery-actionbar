@@ -83,14 +83,13 @@
   margin-left: 5px;
 }
 .actionbar .overflow-button {
-  display: inline-block;
+  display: block;
   height: 40px;
   position: absolute;
   right: 0px;
-}
-.actionbar .overflow-button img {
-  padding: 5px 5px 0px 5px;
-  width: 30px;
+  background: url(../images/overflow.png) 5px 5px no-repeat;
+  background-size: 30px 30px;
+  width: 40px;
 }
 .actionbar .overflow-button:active {
   background-color: #27b9ff;

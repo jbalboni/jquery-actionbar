@@ -89,14 +89,13 @@
     margin-left: 5px;
   }
   .overflow-button {
-    display: inline-block;
+    display: block;
     height: @height;
     position: absolute;
     right: 0px;
-    img {
-      padding: 5px 5px 0px 5px;
-      width: @button-size;
-    }
+    background: url(../images/overflow.png) 5px 5px no-repeat;
+    background-size: @button-size @button-size;
+    width: @height;
     &:active {
       background-color: @highlight-color;
     }
